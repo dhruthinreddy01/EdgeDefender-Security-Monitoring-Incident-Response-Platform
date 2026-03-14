@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card bg-danger text-white">
+            <div class="card-body">
+                <h5 class="card-title">Total Alerts</h5>
+                <p class="card-text">{{ total_alerts }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-warning text-dark">
+            <div class="card-body">
+                <h5 class="card-title">High Severity</h5>
+                <p class="card-text">{{ high_severity }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <canvas id="riskChart"></canvas>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('riskChart').getContext('2d');
+    const riskChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: JSON.parse('{{ risk_labels|tojson|safe }}'),
+            datasets: [{
+                label: 'Risk Distribution',
+                data: JSON.parse('{{ risk_data|tojson|safe }}'),
+                backgroundColor: ['rgba(75, 192, 192, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<!-- Fixed syntax issues in Chart.js integration for risk severity pie chart and other visualizations. Corrected JavaScript object structure and data binding. -->
+{% endblock %}

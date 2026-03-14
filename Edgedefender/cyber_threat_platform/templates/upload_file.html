@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Upload File</h1>
+<form action="/upload_file" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="malwareFile" class="form-label">Upload File</label>
+        <input class="form-control" type="file" id="malwareFile" name="malwareFile" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+{% if result %}
+<h2>Analysis Result</h2>
+<p><b>File Name:</b> {{ result.file_name }}</p>
+<p><b>SHA256 Hash:</b> {{ result.sha256_hash }}</p>
+<p><b>File Size:</b> {{ result.file_size }} bytes</p>
+<p><b>Entropy:</b> {{ result.entropy }}</p>
+<p><b>Risk Score:</b> {{ result.risk_score }}</p>
+{% endif %}
+{% endblock %}

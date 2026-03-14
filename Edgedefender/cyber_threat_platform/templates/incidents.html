@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Incidents</h1>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Description</th>
+            <th>Severity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for incident in incidents %}
+        <tr>
+            <td>{{ incident.timestamp }}</td>
+            <td>{{ incident.description }}</td>
+            <td>{{ incident.severity }}</td>
+            <td>
+                <form action="/generate_report" method="post">
+                    <input type="hidden" name="incident_id" value="{{ incident.id }}">
+                    <button type="submit" class="btn btn-primary">Generate Report</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

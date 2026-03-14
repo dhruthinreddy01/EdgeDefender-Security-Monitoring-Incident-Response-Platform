@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>URL Scan</h1>
+<form action="/url_scan" method="post">
+    <div class="mb-3">
+        <label for="url" class="form-label">Enter URL</label>
+        <input class="form-control" type="url" id="url" name="url" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Scan</button>
+</form>
+{% if result %}
+<h2>Analysis Result</h2>
+<p><b>URL:</b> {{ result.url }}</p>
+<p><b>Risk Score:</b> {{ result.risk_score }}</p>
+<p><b>Classification:</b> {{ result.classification }}</p>
+{% endif %}
+{% endblock %}
