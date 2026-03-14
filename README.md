@@ -5,7 +5,7 @@ EdgeDefender is a cybersecurity project that simulates a real-world Security Ope
 Modern organizations generate large volumes of security logs from systems such as firewalls, authentication servers, endpoints, and network infrastructure. Security teams must analyze these logs to identify suspicious activities and respond to potential threats.
 EdgeDefender demonstrates how security monitoring systems work by collecting logs, analyzing events, detecting suspicious behavior, and presenting actionable alerts to security analysts.
 This project focuses on practical cybersecurity concepts such as log analysis, threat detection engineering, incident correlation, and security monitoring architecture.
-Key Features
+# Key Features
 Centralized Log Collection
 The platform collects logs from simulated enterprise infrastructure including:
 Firewall logs
@@ -23,7 +23,7 @@ Suspicious outbound network connections
 Incident Correlation
 Instead of generating isolated alerts for every event, EdgeDefender groups related events together to form a single security incident, improving investigation efficiency.
 Alert Prioritization
-Detected incidents are classified into severity levels:
+# Detected incidents are classified into severity levels:
 Low
 Medium
 High
@@ -39,14 +39,14 @@ Secure Access Control
 The system implements Role-Based Access Control (RBAC) to manage analyst access to the platform.
 System Architecture
 The platform follows a modular architecture designed to simulate enterprise security monitoring systems.
-Components include:
+# Components include:
 Log Ingestion Layer – Collects and processes security logs
 Detection Engine – Applies security rules and identifies suspicious events
 Incident Correlation Module – Groups related alerts into incidents
 Database – Stores logs and incident data
 SOC Dashboard – Provides visualization and investigation interface
 Authentication System – Manages secure analyst access
-Technologies Used
+# Technologies Used
 Backend
 Python
 FastAPI / Flask
@@ -61,7 +61,7 @@ Other
 REST APIs for system communication
 Installation
 Clone the repository:
-git clone https://github.com/yourusername/EdgeDefender-SOC-Platform.git
+git clone https:github.com/dhruthinreddy01/EdgeDefender-Security-Monitoring-Incident-Response-Platform
 Navigate to the project directory:
 cd EdgeDefender-SOC-Platform
 Install dependencies:
@@ -71,22 +71,22 @@ python app.py
 Start the frontend:
 npm install
 npm start
-Example Use Case
+# EXAMPLE USE CASE
 A user repeatedly attempts to log in with incorrect credentials.
 The system detects multiple failed login attempts.
 The detection engine triggers a security alert.
 The incident correlation module groups related events.
 The SOC dashboard displays the incident with severity level and investigation details.
 This process simulates how real SOC teams detect and respond to potential cyber threats.
-Learning Outcomes
-Through this project, the following cybersecurity concepts are demonstrated:
+LEARNING OUTCOMES
+# Through this project, the following cybersecurity concepts are demonstrated:
 Security log analysis
 Threat detection rule creation
 Security incident correlation
 SOC monitoring workflows
 Alert prioritization and investigation
 Secure application architecture
-Future Improvements
+# FUTURE IMPROVEMENTS
 Integration with SIEM platforms
 Automated incident response actions
 Machine learning-based anomaly detection
